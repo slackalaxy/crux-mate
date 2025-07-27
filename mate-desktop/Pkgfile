@@ -16,4 +16,5 @@ build() {
   make DESTDIR=$PKG install
 
   rm -r $PKG/usr/share/gtk-doc
+  sed -i 's:OnlyShowIn=MATE;:#OnlyShowIn=MATE;:g' $PKG/usr/share/applications/mate-color-select.desktop
 }
