@@ -18,4 +18,6 @@ build() {
     --disable-systemd
   make
   make DESTDIR=$PKG install
+
+  sed -i 's:OnlyShowIn=MATE;:#OnlyShowIn=MATE;:g' $PKG/usr/share/applications/$name.desktop
 }
